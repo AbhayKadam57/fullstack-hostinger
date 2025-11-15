@@ -8,6 +8,9 @@ RUN npm install
 
 COPY . .
 
+ARG VITE_HOSTINGER_IP
+ENV VITE_HOSTINGER_IP=$VITE_HOSTINGER_IP
+
 RUN npm run build
 
 #Production stage

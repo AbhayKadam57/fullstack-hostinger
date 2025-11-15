@@ -11,7 +11,10 @@ services:
       - fullstack-net
     restart: unless-stopped
   client:
-    build: ./client
+    build: 
+      context: ./client
+      args:
+        VITE_HOSTINGER_IP: ${VITE_HOSTINGER_IP}
     container_name: react-client
     ports:
       - "5174:3000"
