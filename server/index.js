@@ -12,7 +12,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      process.env.VITE_HOSTINGER_IP,
+      process.env.CLIENT_URL || "http://72.61.174.49:5174"
     ],
     credentials: true,
     // methods: ["GET", "POST"],
