@@ -1,12 +1,19 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      process.env.VITE_HOSTINGER_IP,
+    ],
     credentials: true,
     // methods: ["GET", "POST"],
     // allowedHeaders: ["Content-Type", "Authorization"],
